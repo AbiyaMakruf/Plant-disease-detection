@@ -35,4 +35,4 @@ def upload():
 if __name__ == "__main__":
     #Loading the Model
     model = tf.keras.models.load_model('./Model/model_2_pohon.h5')
-    app.run(debug=True)
+    app.run()
