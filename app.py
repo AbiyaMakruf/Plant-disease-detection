@@ -12,7 +12,7 @@ ip_address = socket.gethostbyname(host_name)
 app = Flask(__name__)
 
 # Set the upload directory
-UPLOAD_FOLDER = './Upload/'
+UPLOAD_FOLDER = 'Upload/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route("/")
@@ -40,5 +40,5 @@ def upload():
 
 if __name__ == "__main__":
     #Loading the Model
-    model = tf.keras.models.load_model('./Model/model_2_pohon.h5')
+    model = tf.keras.models.load_model('Model/model_2_pohon.h5')
     app.run(host=ip_address, port=5000)
