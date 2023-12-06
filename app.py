@@ -3,6 +3,12 @@ from flask import Flask, jsonify, request
 from utils import *
 import os
 
+import socket
+
+# Mendapatkan alamat IP dari host lokal
+host_name = socket.gethostname()
+ip_address = socket.gethostbyname(host_name)
+
 app = Flask(__name__)
 
 # Set the upload directory
@@ -35,4 +41,4 @@ def upload():
 if __name__ == "__main__":
     #Loading the Model
     model = tf.keras.models.load_model('./Model/model_2_pohon.h5')
-    app.run()
+    app.run(host=ip_address, port=5000)
